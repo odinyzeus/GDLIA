@@ -1,0 +1,24 @@
+Lock_in
+
+IPN CICATA-LEGARIA Técnicas Fototérmicas
+
+felix.rv92@gmail.com; emarinm@ipn.mx
+
+IPN CICATA-LEGARIA
+
+Lock-in processing by three Correlation Methods.
+
+This software uses three Correlation Methods to obtain amplitude and phase graphs from a sequence of periodically generated digital images.
+
+
+
+
+
+
+
+
+
+
+
+
+

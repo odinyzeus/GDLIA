@@ -1,6 +1,9 @@
 from PySide6.QtCore import QSize , Qt
 from PySide6.QtWidgets import *
 
+
+from LIA import *
+
 # Only needed for access to command line arguments
 import sys
 

@@ -1,0 +1,1 @@
+print('Modulo para procesar la Imagen obtenida de la camara')

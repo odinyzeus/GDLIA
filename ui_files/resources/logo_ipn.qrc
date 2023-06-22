@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="cct">
+    <file>exit.png</file>
+    <file>IPN_CICATA.png</file>
+    <file>LOGO POLI PANTONE 222 C.png</file>
+  </qresource>
+</RCC>

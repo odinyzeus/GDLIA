@@ -7,7 +7,7 @@ from LIA import LIA as L
 
 # Only needed for access to command line arguments
 import sys
-
+git config --global user.email "you@example.com"
 def absPath(file):
     return str(Path(__file__).parent.absolute() / file)
 
@@ -18,13 +18,44 @@ def actionCreate(self, Text = "&Botón", Icon = "exit.png", ShortCut = "Ctrl+O",
     accion_info.setStatusTip(StatusTip)
     return accion_info
 
+
+def lyt_build():
+    
+        lyt_Main = QVBoxLayout()
+        lyt_Main.setContentsMargins(5,5,5,5)
+        lyt_Main.setProperty("mandatoryField", True)    
+        
+        # layoutL = QHBoxLayout()
+        # layoutR = QVBoxLayout()
+        # experimento = QFormLayout()
+        # layoutL.setContentsMargins(5,5,5,5)
+        # layoutR.setContentsMargins(0,0,5,0)
+        
+        # layoutL.addWidget(Caja("orange"))
+        # layoutL.addLayout(layoutR)
+
+        # layoutR.addWidget(Caja("green"))
+        # layoutR.addWidget(Caja("blue"))
+
+        # experimento.addRow("Campo 1", Caja("orange"))
+        # experimento.addRow("Campo 2", Caja("purple"))
+        # experimento.addRow("Campo 3", Caja("magenta"))
+        # experimento.addRow("Campo 4", Caja("gray"))
+        # experimento.addRow("Campo 5", Caja("red"))
+
+        widget = QWidget()
+        widget.setLayout(lyt_Main)
+        return widget
+
+
 # Define the main window class
 class MainWindow(QMainWindow):
-    __LIA = None
-
+    _file_video  = ''
+    
     def __init__(self):
-        super().__init__()
         # construimos el menú
+        super().__init__()
+        self.setCentralWidget(lyt_build())
         self.mnu_build()
         self.setWindowTitle("Graphic Digital Lock In Amplifier")
         self.setFixedSize(QSize(480, 320)) # Set the size of main window
@@ -58,8 +89,7 @@ class MainWindow(QMainWindow):
             self, "Diálogo informativo", "Esto es un texto informativo")
 
     def openvideo(self):
-        dialogo = QMessageBox.information(
-            self, "Diálogo informativo", "desde aqui se carga el archivo de video")
+        self._file_video = QFileDialog.getOpenFileName(self, "Abrir archivo", str("Videos (*.avi *.mp4)"))
 
 # You need one (and only one) QApplication instance per application.
 # Pass in sys.argv to allow command line arguments for your app.
